@@ -1,0 +1,35 @@
+Notes on statbility data file
+-----------------------------
+
+File name : stnyyyy
+            where stn = station code
+                 yyyy = year
+                   (e.g. cch1999 means data for Cheung Chau for 1999)
+
+Record Layout : Hourly record in sequence starting from 0100 hour
+                on the 1st day of the month
+
+       Field 1 : YYMM (year and month)
+       Field 2 : DDHH (day and hour)
+       Field 3 : 10-minute mean wind direction in degree
+       Field 4 : 10-minute mean wind speed in tenths of m/s
+       Field 5 : Pasquill Stability Class x 10
+       Field 6 : Temperature in tenths of degree Celsius (Optional)
+
+  e.g. Field    1    2    3    4    5    6
+             9901  101  130   50   12  203
+
+       9901 - YYMM : Year = 1999; Month = January
+
+        101 - DDHH : Day  = 1st;  Hour  = 0100
+
+        130 - 10-minute mean wind direction in degree = 130
+              (9999 means variable)
+
+         50 - 10-minute mean wind speed in tenths of m/s = 5.0
+
+         15 - Pasquill Stability Class x 10 = 1.5
+
+        203 - Temperature in tenths of degree Celsius = 20.3
+
+     -32767 - means data not available
